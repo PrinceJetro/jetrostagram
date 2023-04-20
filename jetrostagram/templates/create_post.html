@@ -39,6 +39,9 @@ button{
   opacity: 0.9;
 }
 
+input{
+  height:50px;
+}
 .registerbtn:hover {
   opacity: 1;
 }
@@ -56,8 +59,13 @@ a {
 </style>
 
   <h2>Create Post</h2>
+  <form method = "post" enctype="multipart/form-data" action="image">
+		{% csrf_token %}
+		{{ image.as_p }}
+		<button type="submit">Upload</button>
+	</form>
   <form method = "post" enctype="multipart/form-data">
 		{% csrf_token %}
-		{{ form.as_p }}
+		{{ slt.as_p }}
 		<button type="submit">Upload</button>
 	</form>
